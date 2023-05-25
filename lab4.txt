@@ -1,0 +1,832 @@
+Bài tập 1:
+				+ Benh nhan
+					public class BenhNhan extends Nguoi{
+					private String tienSu;
+					private String chanDoan;
+					private BenhVien benhVien;
+					public BenhNhan()
+					{
+						benhVien = new BenhVien();
+					}
+					public BenhNhan(String ten, int tuoi, char gioiTinh,String tienSu, String chanDoan, BenhVien benhVien) {
+						super(ten,tuoi,gioiTinh);
+						this.tienSu = tienSu;
+						this.chanDoan = chanDoan;
+						this.benhVien = benhVien;
+					}
+					public String getTienSu() {
+						return tienSu;
+					}
+					public void setTienSu(String tienSu) {
+						this.tienSu = tienSu;
+					}
+					public String getChanDoan() {
+						return chanDoan;
+					}
+					public void setChanDoan(String chanDoan) {
+						this.chanDoan = chanDoan;
+					}
+					public BenhVien getBenhVien() {
+						return benhVien;
+					}
+					public void setBenhVien(BenhVien benhVien) {
+						this.benhVien = benhVien;
+					}
+					@Override
+					public String toString() {
+						return super.toString() + " [tienSu=" + tienSu + ", chanDoan=" + chanDoan + ", BenhVien=" + benhVien + "]";
+					}
+				}
++ Benh Vien
+					public class BenhVien {
+					private String ten;
+					private String diaChi;
+					private String giamDoc;
+					public BenhVien()
+					{
+						
+					}
+					public BenhVien(String ten, String diaChi, String giamDoc) {
+						this.ten = ten;
+						this.diaChi = diaChi;
+						this.giamDoc = giamDoc;
+					}
+					public String getTen() {
+						return ten;
+					}
+					public void setTen(String ten) {
+						this.ten = ten;
+					}
+					public String getDiaChi() {
+						return diaChi;
+					}
+					public void setDiaChi(String diaChi) {
+						this.diaChi = diaChi;
+					}
+					public String getGiamDoc() {
+						return giamDoc;
+					}
+					public void setGiamDoc(String giamDoc) {
+						this.giamDoc = giamDoc;
+					}
+					@Override
+					public String toString() {
+						return  ten + ", Dia chi: " + diaChi
+								+ ", Giam Doc: " + giamDoc;
+					}
+					
+				}
++ Nguoi
+				public class Nguoi {
+					private String ten;
+					private int tuoi;
+					private char gioiTinh;
+					public Nguoi()
+					{
+						
+					}
+					public Nguoi(String ten, int tuoi, char gioiTinh) {
+						this.ten = ten;
+						this.tuoi = tuoi;
+						this.gioiTinh = gioiTinh;
+					}
+					public String getTen() {
+						return ten;
+					}
+					public void setTen(String ten) {
+						this.ten = ten;
+					}
+					public int getTuoi() {
+						return tuoi;
+					}
+					public void setTuoi(int tuoi) {
+						this.tuoi = tuoi;
+					}
+					public char getGioiTinh() {
+						return gioiTinh;
+					}
+					public void setGioiTinh(char gioiTinh) {
+						this.gioiTinh = gioiTinh;
+					}
+					@Override
+					public String toString() {
+						return "[ten=" + ten + ", tuoi=" + tuoi + ", gioiTinh=" + gioiTinh + "]";
+					}
+					
+				}
++ Main
+				import java.util.Scanner;
+
+				public class Test {
+					public static void nhapThongTin(BenhNhan obj1)
+					{
+						Scanner sc = new Scanner(System.in);
+						//BenhNhan obj1 = new BenhNhan();
+						System.out.print("nhap ho ten: ");
+						obj1.setTen(sc.nextLine());
+						System.out.print("Nhap tuoi: ");
+						obj1.setTuoi(sc.nextInt());
+						System.out.print("Nhap gioi tinh: ");
+						obj1.setGioiTinh(sc.next().charAt(0));
+						String c = sc.nextLine();
+						System.out.print("Nhap tien su: ");
+						obj1.setTienSu(sc.nextLine());
+						System.out.print("Nhap chan doan: ");
+						obj1.setChanDoan(sc.nextLine());
+						BenhVien bv = new BenhVien();
+						System.out.print("Nhap ten bv: ");
+						bv.setTen(sc.nextLine());
+						System.out.print("Nhap dia chi: ");
+						bv.setDiaChi(sc.nextLine());
+						System.out.println("Giam doc: ");
+						bv.setGiamDoc(sc.nextLine());
+						obj1.setBenhVien(bv);
+						System.out.println();
+					}
+					public static void inThongTin(BenhNhan obj1)
+					{
+						System.out.println("Ten: " + obj1.getTen());
+						System.out.println("Tuoi: " + obj1.getTuoi());
+						System.out.println("Gioi tinhh: " + obj1.getGioiTinh());
+						System.out.println("Tien su: " + obj1.getTienSu());
+						System.out.println("Chan doan: " + obj1.getChanDoan());
+					}
+					public static void main(String[] args) {
+						System.out.println("Nhap thong tin benh nhan");
+						BenhNhan obj1 = new BenhNhan();
+						nhapThongTin(obj1);
+						System.out.println("Thong tin benh nhan");
+						System.out.println(obj1.toString());
+					}
+				}
+				
+Bai 2:
++ Nguoi:
+		public class Nguoi {
+		private String ten;
+		private int tuoi;
+		private char gioiTinh;
+		public Nguoi()
+		{
+			
+		}
+		public Nguoi(String ten, int tuoi, char gioiTinh) {
+			this.ten = ten;
+			this.tuoi = tuoi;
+			this.gioiTinh = gioiTinh;
+		}
+		public String getTen() {
+			return ten;
+		}
+		public void setTen(String ten) {
+			this.ten = ten;
+		}
+		public int getTuoi() {
+			return tuoi;
+		}
+		public void setTuoi(int tuoi) {
+			this.tuoi = tuoi;
+		}
+		public char getGioiTinh() {
+			return gioiTinh;
+		}
+		public void setGioiTinh(char gioiTinh) {
+			this.gioiTinh = gioiTinh;
+		}
+		@Override
+		public String toString() {
+			return "[ten=" + ten + ", tuoi=" + tuoi + ", gioiTinh=" + gioiTinh + ",";
+		}
+		
+	}
+
++ Sinh Vien
+			public class SinhVien extends Nguoi{
+			private String lop;
+			private String nganh;
+			private Truong truong;
+			public SinhVien()
+			{
+				
+			}
+			public SinhVien(String ten, int tuoi, char gioiTinh,String lop, String nganh, Truong truong) {
+				super(ten,tuoi,gioiTinh);
+				this.lop = lop;
+				this.nganh = nganh;
+				this.truong = truong;
+			}
+			public String getLop() {
+				return lop;
+			}
+			public void setLop(String lop) {
+				this.lop = lop;
+			}
+			public String getNganh() {
+				return nganh;
+			}
+			public void setNganh(String nganh) {
+				this.nganh = nganh;
+			}
+			public Truong getTruong() {
+				return truong;
+			}
+			public void setTruong(Truong truong) {
+				this.truong = truong;
+			}
+			@Override
+			public String toString() {
+				return super.toString() + "lop=" + lop + ", nganh=" + nganh + ", truong=" + truong + "]";
+		}
+			
+		}
+
+	+ Truong:
+			public class Truong {
+				private String tenTruong;
+				private String diaChi;
+				private String hieuTruong;
+				public Truong()
+				{
+					
+				}
+				public Truong(String tenTruong, String diaChi, String hieuTruong) {
+					super();
+					this.tenTruong = tenTruong;
+					this.diaChi = diaChi;
+					this.hieuTruong = hieuTruong;
+				}
+				public String getTenTruong() {
+					return tenTruong;
+				}
+				public void setTenTruong(String tenTruong) {
+					this.tenTruong = tenTruong;
+				}
+				public String getDiaChi() {
+					return diaChi;
+				}
+				public void setDiaChi(String diaChi) {
+					this.diaChi = diaChi;
+				}
+				public String getHieuTruong() {
+					return hieuTruong;
+				}
+				public void setHieuTruong(String hieuTruong) {
+					this.hieuTruong = hieuTruong;
+				}
+				@Override
+				public String toString() {
+					return " [ten=" + tenTruong + ", diaChi=" + diaChi + ", hieuTruong=" + hieuTruong + "]";
+				}
+				
+			}
++ Main:
+			import java.util.Scanner;
+
+			public class Test {
+				public static void nhapThongTin()
+				{
+					String ten,lop,nghanh;
+					int tuoi;
+					char gioitinh;
+					Scanner sc = new Scanner(System.in);
+					System.out.print("Nhap ten: "); ten = sc.nextLine();
+					System.out.print("Nhap tuoi: "); tuoi = sc.nextInt();
+					System.out.print("Nhap gioi tinh: "); gioitinh = sc.next().charAt(0);
+					System.out.print("Nhap lop: "); lop = sc.nextLine();
+					sc.nextLine();;
+					System.out.print("Nhap nghanh: "); nghanh = sc.nextLine();
+					String tenTruong,diaChi,hieuTruong;
+					System.out.print("Nhap ten truong: "); tenTruong = sc.nextLine();
+					System.out.print("Nhap dia chi truong: "); diaChi = sc.nextLine();
+					System.out.print("Nhap hieu truong: "); hieuTruong = sc.nextLine();
+					Truong th = new Truong(tenTruong,diaChi,hieuTruong);
+					SinhVien sv = new SinhVien(ten,tuoi,gioitinh,lop,nghanh,th);
+					System.out.println(sv.toString());
+				}
+				public static void main(String[] args) {
+					nhapThongTin();
+				}
+			}
+			
+	Bai Tap 3: 
+
++ Employee
+				public class Employee extends Person{
+				private String employeeName;
+				private String dateHired;
+				public Employee(String name, int age, char gender, String employeeName, String dateHired) {
+					super(name, age, gender);
+					this.employeeName = employeeName;
+					this.dateHired = dateHired;
+				}
+				public String getEmployeeName() {
+					return employeeName;
+				}
+				public void setEmployeeName(String employeeName) {
+					this.employeeName = employeeName;
+				}
+				public String getDateHired() {
+					return dateHired;
+				}
+				public void setDateHired(String dateHired) {
+					this.dateHired = dateHired;
+				}
+				@Override
+				public String toString() {
+					return super.toString() + "Employee [employeeName=" + employeeName + ", dateHired=" + dateHired + "]";
+				}
+				
+			}
+			
++ PartTimeEmployee
+				public class PartTimeEmployee extends Employee{
+				private int hoursPerWeek;
+
+				public PartTimeEmployee(String name, int age, char gender, String employeeName, String dateHired,
+						int hoursPerWeek) {
+					super(name, age, gender, employeeName, dateHired);
+					this.hoursPerWeek = hoursPerWeek;
+				}
+				
+				public int getHoursPerWeek() {
+					return hoursPerWeek;
+				}
+
+				public void setHoursPerWeek(int hoursPerWeek) {
+					this.hoursPerWeek = hoursPerWeek;
+				}
+
+				@Override
+				public String toString() {
+					return super.toString() + "PartTimeEmployee [hoursPerWeek=" + hoursPerWeek + "]";
+				}
+				
+			}
+			
++ Peson
+				public class Person {
+				private String name;
+				private int age;
+				private char gender;
+				public Person(String name, int age, char gender) {
+					this.name = name;
+					this.age = age;
+					this.gender = gender;
+				}
+				public String getName() {
+					return name;
+				}
+				public void setName(String name) {
+					this.name = name;
+				}
+				public int getAge() {
+					return age;
+				}
+				public void setAge(int age) {
+					this.age = age;
+				}
+				public char getGender() {
+					return gender;
+				}
+				public void setGender(char gender) {
+					this.gender = gender;
+				}
+				@Override
+				public String toString() {
+					return "Person [name=" + name + ", age=" + age + ", gender=" + gender + "]";
+				}
+				
+				
+			}
+			
++ Main:
+				public class Test {
+				public static void main(String[] args) {
+					PartTimeEmployee obj = new PartTimeEmployee("john",18,'m', "sweep","12-4", 14);
+					System.out.println(obj.toString());
+					obj.setAge(20);
+					obj.setHoursPerWeek(20);
+					System.out.println(obj.toString());
+				}
+				
+				}
+				
+Bai Tap 4:
++ Hoc Vien:
+				import java.util.Scanner;
+
+				public abstract class HocVien {
+				 private String hoten;
+				 private String diachi;
+				 private String loaiChuongTrinh;
+				 public HocVien()
+				 {
+					 hoten = null;
+					 diachi = null;
+					 loaiChuongTrinh = null;
+				 }
+				 public HocVien(String hoten, String diachi, String loaiChuongTrinh) {
+					super();
+					this.hoten = hoten;
+					this.diachi = diachi;
+					this.loaiChuongTrinh = loaiChuongTrinh;
+				}
+				 public void nhapThongTin()
+				 {
+					 Scanner sc = new Scanner(System.in);
+					 System.out.print("Nhap ho ten: ");
+					 hoten = sc.nextLine();
+					 System.out.print("Nhap dia chi: ");
+					 diachi = sc.nextLine();
+					 System.out.print("Nhap loai chuong trinh: ");
+					 loaiChuongTrinh = sc.nextLine();
+				 }
+				 public abstract int hocPhi();
+				 
+				 public void inThongTin()
+				 {
+					 System.out.println("Ho ten: " + hoten);
+					 System.out.println("Dia chi: " + diachi);
+					 System.out.println("Loai chuong trinh hoc: " + loaiChuongTrinh);
+				 }
+					 
+			}
+			
++ HocVienDH
+			import java.util.Scanner;
+			public class HocVienDH extends HocVien {
+				private int soBuoiHoc;
+				private int DonGiaDH;
+				private int uuTien;
+				
+				public HocVienDH()
+				{
+					super();
+					soBuoiHoc = 0;
+					DonGiaDH = 0;
+					uuTien = 0;
+				}
+				public HocVienDH(int soBuoiHoc, int donGiaDH, int uuTien) {
+					super();
+					this.soBuoiHoc = soBuoiHoc;
+					DonGiaDH = donGiaDH;
+					this.uuTien = uuTien;
+				}
+				public int hocPhi()
+				{
+					if(uuTien==1)
+					{
+						return soBuoiHoc*DonGiaDH-1000000;
+					}
+					return soBuoiHoc*DonGiaDH-500000;
+				}
+				public void nhapThongTin()
+				{
+					Scanner sc = new Scanner(System.in);
+					super.nhapThongTin();
+					System.out.print("Nhap so buoi hoc: ");
+					soBuoiHoc = sc.nextInt();
+					System.out.print("Nhap don gia: ");
+					DonGiaDH = sc.nextInt();
+					System.out.print("Nhap loai uu tien: ");
+					uuTien = sc.nextInt();
+				}
+				
+				public void inThongTin()
+				{
+					super.inThongTin();
+					System.out.println("So buoi hoc: " + soBuoiHoc);
+					System.out.println("Don gia: " + DonGiaDH);
+					System.out.println("Loai uu tien: " + uuTien);
+					System.out.println("Hoc phi: " + hocPhi());
+				}
+				
+				}
+			
++ Hoc Vien LT:
+			import java.util.Scanner;
+
+			public class HocVienLT extends HocVien{
+				private int soBuoiHoc;
+				private int DonGiaLT;
+				private int uuTien;
+				
+				public HocVienLT()
+				{
+					super();
+					soBuoiHoc = 0;
+					DonGiaLT = 0;
+					uuTien = 0;
+				}
+				
+				public HocVienLT(int soBuoiHoc, int donGiaLT, int uuTien) {
+					super();
+					this.soBuoiHoc = soBuoiHoc;
+					this.DonGiaLT = donGiaLT;
+					this.uuTien = uuTien;
+				}
+				
+				public int hocPhi()
+				{
+					if(uuTien==1)
+					{
+						return soBuoiHoc*DonGiaLT-1000000;
+					}
+					return soBuoiHoc*DonGiaLT-800000;
+				}
+				
+				public void nhapThongTin()
+				{
+					Scanner sc = new Scanner(System.in);
+					super.nhapThongTin();
+					System.out.print("Nhap so buoi hoc: ");
+					soBuoiHoc = sc.nextInt();
+					System.out.print("Nhap don gia: ");
+					DonGiaLT = sc.nextInt();
+					System.out.print("Nhap loai uu tien: ");
+					uuTien = sc.nextInt();
+				}
+				
+				public void inThongTin()
+				{
+					super.inThongTin();
+					System.out.println("So buoi hoc: " + soBuoiHoc);
+					System.out.println("Don gia: " + DonGiaLT);
+					System.out.println("Loai uu tien: " + uuTien);
+					System.out.println("Hoc phi: " + hocPhi());
+				}
+			}
+
++ Main: 
+			public class Main {
+				public static void main(String[] args) {
+					HocVienDH obj_dh = new HocVienDH();
+					HocVienLT obj_lt = new HocVienLT();
+					System.out.println("Nhap thong tin hoc vien do hoa");
+					obj_dh.nhapThongTin();
+					System.out.println("Nhap thong tin cho hoc vien lap trinh");
+					obj_lt.nhapThongTin();
+					System.out.println("Thong tin hoc vien do hoa");
+					obj_dh.inThongTin();
+					System.out.println("------------------------------");
+					System.out.println("Thong tin hoc vien lap trinh");
+					obj_lt.inThongTin();
+				}
+			}
+			
+
+Bai Tap 5:
++ GVCoHuu:
+
+			import java.util.Scanner;
+
+			public class GVCoHuu extends GiangVien{
+				private int luongCoBan;
+				private double heSoLuong;
+				private int thamNienCongTac;
+				public GVCoHuu()
+				{
+					super();
+					luongCoBan = 0;
+					heSoLuong = 0;
+					thamNienCongTac = 0;
+				}
+				public GVCoHuu(int luongCoBan, double heSoLuong, int thamNienCongTac) {
+					super();
+					this.luongCoBan = luongCoBan;
+					this.heSoLuong = heSoLuong;
+					this.thamNienCongTac = thamNienCongTac;
+				}
+				public void nhapThongTin()
+				{
+					Scanner sc = new Scanner(System.in);
+					super.nhapThongTin();
+					System.out.print("Nhap luong co ban: ");
+					luongCoBan = sc.nextInt();
+					System.out.print("Nhap he so luong: ");
+					heSoLuong = sc.nextDouble();
+					System.out.print("Nhap tham nien cong tac: ");
+					thamNienCongTac = sc.nextInt();
+				}
+				public double tinhLuong()
+				{
+					if(thamNienCongTac < 5)
+					{
+						return luongCoBan * heSoLuong;
+					}
+					double phuCap = ((float)thamNienCongTac/100) * luongCoBan;
+					return luongCoBan * heSoLuong + phuCap;
+				}
+				public void inThongTin()
+				{
+					super.inThongTin();
+					System.out.println("Luong co ban: " + luongCoBan);
+					System.out.println("He so luong: " + heSoLuong);
+					System.out.println("Tham nien cong tac: " + thamNienCongTac);
+
+				}
+			}
+
++ GVThinhGiang:
+			import java.util.Scanner;
+			public class GVThinhGiang extends GiangVien{
+				private int soTietDay;
+				private int donGia;
+				public GVThinhGiang()
+				{
+					super();
+					soTietDay = 0;
+					donGia = 0;
+				}
+				public GVThinhGiang(int soTietDay, int donGia) {
+					super();
+					this.soTietDay = soTietDay;
+					this.donGia = donGia;
+				}
+				public void nhapThongTin()
+				{
+					Scanner sc = new Scanner(System.in);
+					super.nhapThongTin();
+					System.out.print("Nhap so tiet day: ");
+					soTietDay = sc.nextInt();
+					System.out.print("Nhap don gia: ");
+					donGia = sc.nextInt();
+				}
+				public double tinhLuong()
+				{
+					double thuNhap = ((double)15/100 * (soTietDay*donGia));
+					return soTietDay*donGia - (thuNhap/100);
+				}
+				public void inThongTin()
+				{
+					super.inThongTin();
+					System.out.println("So tiet day: " + soTietDay);
+					System.out.println("Don gia: " + donGia);
+				}
+			}
+
++ GiangVien
+			import java.util.Scanner;
+			public abstract class GiangVien {
+				private String hoTen;
+				private String diaChi;
+				private String loaiGiangVien;
+				public GiangVien()
+				{
+					hoTen = null;
+					diaChi = null;
+					loaiGiangVien = null;
+				}
+				public GiangVien(String hoTen, String diaChi, String loaiGiangVien) {
+					this.hoTen = hoTen;
+					this.diaChi = diaChi;
+					this.loaiGiangVien = loaiGiangVien;
+				}
+				public void nhapThongTin()
+				{
+					Scanner sc = new Scanner(System.in);
+					System.out.print("Nhap ho ten: ");
+					hoTen = sc.nextLine();
+					System.out.print("Nhap dia chi: ");
+					diaChi = sc.nextLine();
+					System.out.print("Nhap loai giang vien:");
+					loaiGiangVien = sc.nextLine();
+				}
+				
+				public abstract double tinhLuong();
+				public void inThongTin()
+				{
+					System.out.println("Ho ten: " + hoTen);
+					System.out.println("Dia chi: " + diaChi);
+					System.out.println("Loai giang vien: " + loaiGiangVien);
+					System.out.println("Luong thang: " + tinhLuong());
+				}
+				
+			}
+	
++ Main
+			public class Main {
+				public static void main(String[] args) {
+					GVCoHuu obj1 = new GVCoHuu();
+					GVThinhGiang obj2 = new GVThinhGiang();
+					System.out.println("Nhap thong tin giang vien co huu");
+					obj1.nhapThongTin();
+					System.out.println("Nhap thong tin giang vien thinh giang");
+					obj2.nhapThongTin();
+					System.out.println("Thong tin giang vien co huu");
+					obj1.inThongTin();
+					System.out.println("Thong tin giang vien thinh giang");
+					obj2.inThongTin();
+				}
+			}
+			
+Bai 6:
+			import java.util.Scanner;
+
+			// Lớp trừu tượng CongNhan
+			abstract class CongNhan {
+				private String hoTen;
+				private String diaChi;
+				private String loaiCongNhan;
+
+				// Phương thức nhập thông tin cho công nhân
+				public void nhapThongTin(String hoTen, String diaChi, String loaiCongNhan) {
+					this.hoTen = hoTen;
+					this.diaChi = diaChi;
+					this.loaiCongNhan = loaiCongNhan;
+				}
+
+				// Phương thức trừu tượng để tính lương tháng cho công nhân
+				public abstract double tinhLuong();
+
+				// Phương thức in thông tin công nhân
+				public void inThongTin() {
+					System.out.println("Họ tên: " + hoTen);
+					System.out.println("Địa chỉ: " + diaChi);
+					System.out.println("Loại công nhân: " + loaiCongNhan);
+					System.out.println("Lương tháng: " + tinhLuong());
+				}
+			}
+
+			// Lớp CNKSP kế thừa từ lớp CongNhan
+			class CNKSP extends CongNhan {
+				private int soSanPham;
+				private double donGiaSanPham;
+
+				// Phương thức nhập thông tin cho CNKSP
+				public void nhapThongTin(String hoTen, String diaChi, int soSanPham, double donGiaSanPham) {
+					super.nhapThongTin(hoTen, diaChi, "CNKSP");
+					this.soSanPham = soSanPham;
+					this.donGiaSanPham = donGiaSanPham;
+				}
+
+				// Phương thức tính lương tháng cho CNKSP
+				public double tinhLuong() {
+					double luongThang = soSanPham * donGiaSanPham;
+					if (soSanPham >= 150) {
+						luongThang += 1500000;
+					} else if (soSanPham >= 100) {
+						luongThang += 1000000;
+					}
+					return luongThang;
+				}
+			}
+
+			// Lớp CNTCN kế thừa từ lớp CongNhan
+			class CNTCN extends CongNhan {
+				private int soNgayCong;
+				private double luongCoBan;
+
+				// Phương thức nhập thông tin cho CNTCN
+				public void nhapThongTin(String hoTen, String diaChi, int soNgayCong, double luongCoBan) {
+					super.nhapThongTin(hoTen, diaChi, "CNTCN");
+					this.soNgayCong = soNgayCong;
+					this.luongCoBan = luongCoBan;
+				}
+
+				// Phương thức tính lương tháng cho CNTCN
+				public double tinhLuong() {
+					double luongThang = luongCoBan * soNgayCong;
+					if (soNgayCong >= 20) {
+						luongThang += 1.2 * luongCoBan;
+					}
+					return luongThang;
+				}
+			}
+
+			public class Main {
+				public static void main(String[] args) {
+					Scanner scanner = new Scanner(System.in);
+
+					CNKSP cnksp = new CNKSP();
+					System.out.print("Nhập họ tên CNKSP: ");
+					String hoTenCNKSP = scanner.nextLine();
+					System.out.print("Nhập địa chỉ CNKSP: ");
+					String diaChiCNKSP = scanner.nextLine();
+					System.out.print("Nhập số sản phẩm của CNKSP: ");
+					int soSanPham = scanner.nextInt();
+					System.out.print("Nhập đơn giá sản phẩm của CNKSP: ");
+					double donGiaSanPham = scanner.nextDouble();
+					cnksp.nhapThongTin(hoTenCNKSP, diaChiCNKSP, soSanPham, donGiaSanPham);
+
+					CNTCN cntcn = new CNTCN();
+					scanner.nextLine(); // Đọc bỏ dòng new line còn lại
+					System.out.print("Nhập họ tên CNTCN: ");
+					String hoTenCNTCN = scanner.nextLine();
+					System.out.print("Nhập địa chỉ CNTCN: ");
+					String diaChiCNTCN = scanner.nextLine();
+					System.out.print("Nhập số ngày công của CNTCN: ");
+					int soNgayCong = scanner.nextInt();
+					System.out.print("Nhập lương cơ bản của CNTCN: ");
+					double luongCoBan = scanner.nextDouble();
+					cntcn.nhapThongTin(hoTenCNTCN, diaChiCNTCN, soNgayCong, luongCoBan);
+
+					scanner.close();
+
+					System.out.println("Thông tin CNKSP:");
+					cnksp.inThongTin();
+
+					System.out.println("\nThông tin CNTCN:");
+					cntcn.inThongTin();
+				}
+			}
